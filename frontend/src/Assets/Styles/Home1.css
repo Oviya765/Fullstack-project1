@@ -1,0 +1,28 @@
+.home-parent-container
+{
+    background-color: black;
+    height:90vh;
+    width:100vw;
+    overflow: hidden;
+    position: relative;
+}
+.custom-shape-divider-bottom-1721901969 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1721901969 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 187px;
+}
+
+.custom-shape-divider-bottom-1721901969 .shape-fill {
+    fill: #FFFFFF;
+}
