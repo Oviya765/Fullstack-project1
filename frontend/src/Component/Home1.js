@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
 import Navigation1 from "./Navigation1";
 import '../Assets/Styles/Home1.css';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import HomeImage1 from '../Assets/Images/home-design-img1.png';
 import HomeOverlapImage1 from '../Assets/Images/home-img-overlap-1.png';
 import Section1Img1 from '../Assets/Images/home-section1-img1.png';
+import Section4Img1 from '../Assets/Images/section4-child1-img1.png'
+import Section4Img2 from '../Assets/Images/section4-child2-img1.png'
 import Slider from './Slider';
+import { Link } from 'react-router-dom';
 
 const cardData = [
     { id: 1, title: 'Card Title 1', description: 'Card description goes here. This section provides more information about the topic of the card.' },
@@ -17,7 +21,7 @@ const cardData = [
 
 function Home1() {
     useEffect(() => {
-        const section1 = document.getElementById('section1');
+        const section1 = document.getElementById('section1-whole');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -43,7 +47,11 @@ function Home1() {
                         <img src={HomeImage1} alt="homeimg1" className="main-img" />
                     </div>
                     <div className="home-text-container">
-                        <h1 className="home-text">Let's Crack the Interview</h1>
+                        <div className="home-text">
+                            <h1>Turn Interviews into Job Offers with <span style={{ color: '#003366' }}> Expert Mock Sessions</span></h1>
+                            <p>Elevate your interview skills with MockMate – realistic practice, expert feedback. Master your pitch and land your dream job!</p>
+                            <Link to="/register"><button>Create a account</button></Link>
+                           </div>
                     </div>
                 </div>
                 <div className="custom-shape-divider-bottom-1721904883">
@@ -52,8 +60,9 @@ function Home1() {
                     </svg>
                 </div>
             </div>
+            
             <div className="home-section-container" id="section1">
-             <div className="section1-whole1-container">
+             <div className="section1-whole1-container"  id="section1-whole">
                 <div className="section1-child1" id='sect1-child1'>
                     <h1>Course</h1>
                     <p>Our courses are designed to help you get the job you want. We have a wide range of courses to choose from, so you can find the perfect one for you.</p>
@@ -63,6 +72,7 @@ function Home1() {
                 </div>
              </div>
              </div>
+             
 
             <div className="home-section-container" id="section2">
                 <div className='section2-child1'>
@@ -75,10 +85,30 @@ function Home1() {
               </div>
             </div>
 
-            <div className="home-section-container" id ="section4">
-               
+            <div className="home-section-container" id="section4">
+                <div className="section4-whole1-container">
+               <div className='section4-child1'>
+                  <img src={Section4Img1} alt='section4-img1'/>
+               </div>
+               <div className='section4-child2'>
+                  <div className='section4-txt'>
+                   <h1>Practice for the Pressure</h1>
+                   <p>We use your built-in camera to recreate the pressure of actual interviews so you can gain realistic experience and feel prepared for anything.</p>
+                   </div>
+               </div>
+               </div>
+                <div className="section4-whole1-container">
+               <div className='section4-child1'>
+               <div className='section4-txt'>
+                <h1>Review Your Recorded Responses</h1>
+                   <p>Your responses are automatically recorded, so you can watch them after your interview and know exactly how you came across.</p>
+                   </div>
+               </div>
+               <div className='section4-child2'>
+                  <img src={Section4Img2} alt='section4-img1'/>
+               </div>
+               </div>
            </div>
-
 
             <div className="home-section-container" id ="section3">
                 <div className="slider-section3">
@@ -92,6 +122,26 @@ function Home1() {
                     </div>
                 </div>
            </div>
+
+            <div className="home-section-container" id ="section5">
+            <footer className="footer">
+            <div className="footer-content">
+                <h2>Let's Crack the Interview</h2>
+                <p>Practice for the real interview experience and land your dream job.</p>
+                <div className="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+                </div>
+            </div>
+            <div className="footer-bottom">
+                <p>&copy; 2024 Mock Interview. All rights reserved.</p>
+            </div>
+        </footer>
+           </div>
+
+            
 
         </div>
     );

@@ -17,7 +17,10 @@ function Navigation1() {
                         <Link to="/interview">Interview</Link>
                     </li>
                     <li>
-                        <Link to="/account"><img src={whiteaccount} alt="profile" /></Link>
+                        <Link to="/feedback">Feedback</Link>
+                    </li>
+                    <li>
+                        <Link to="/signin">SignIn</Link>
                     </li>
                 </div>
             </ul>
