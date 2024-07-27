@@ -4,6 +4,7 @@ import './App.css';
 import Login from './Component/Login';
 import Register from './Component/Register';
 import Home1 from './Component/Home1';
+import Slider from './Component/Slider';
 function App() {
   return (
     <div>

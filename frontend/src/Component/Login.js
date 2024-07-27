@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { updateForm, setErrors } from "../Redux/Action";
 import "../Assets/Styles/Login.css";
 import loginImage from "../Assets/Images/login-image.png";
@@ -9,6 +9,7 @@ function Login() {
   const dispatch = useDispatch();
   const formValues = useSelector((state) => state.form.formValues);
   const errors = useSelector((state) => state.form.errors);
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -54,14 +55,15 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validate()) {
-      console.log("Form data:", formValues);
+      console.log("Form data is valid:", formValues);
+      navigate('/home'); // Navigate to home or desired route
     }
   };
 
   return (
     <div className="login-register-container">
       <div className="login-container">
-      <div className="login-img">
+        <div className="login-img">
           <img src={loginImage} alt="Login Illustration" />
         </div>
         <div className="login-subcls">
@@ -89,14 +91,12 @@ function Login() {
               />
               {errors.password && <p className="error">{errors.password}</p>}
             </div>
-            <Link to="/home"><button type="submit">Login</button></Link>
+            <button type="submit">Login</button>
             <p>
               Don't have an account? <Link to="register">Register</Link>
             </p>
           </form>
         </div>
-        
-        {/* </div> */}
       </div>
     </div>
   );
