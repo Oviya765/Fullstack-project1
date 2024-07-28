@@ -1,20 +1,32 @@
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
-import UserView from '../Component/UserView';
-import EditUsers from '../Component/EditUser';
-import AddUsers from '../Component/AddUser';
-import DeleteUsers from '../Component/DeleteUser';
-import FeedbackAdmindash from '../Component/FeedBackadmindash';
-// import Schedules from './Schedules';
-import '../Assets/Styles/AdminPanel.css';
+import AdminProfileImg from 'D:/sem5-project1/Fullstack-project1/frontend/src/Assets/Images/admin-profile.jpg'
+import UserView from './UserView';
+import EditUsers from './EditUser';
+import AddUsers from './AddUser';
+import DeleteUsers from './DeleteUser';
+import FeedbackAdmindash from './FeedBackadmindash';
+import ScheduleAdminDashboard from './ScheduleAdmin';
+import AdminProfile from './AdminProfile';
+
+import 'D:/sem5-project1/Fullstack-project1/frontend/src/Assets/Styles/AdminCss/AdminPanel.css';
 
 function AdminDashboard() {
   return (
     <div className="dashboard-container">
       <div className="side-panel">
-        <h2>Admin Panel</h2>
+        <Link to="/admindashboard/profile" className="profile-link">
+          <img src={AdminProfileImg} alt="Profile" className="profile-image" />
+        </Link>
+        <h2 style={{marginLeft:'30px'}}>Admin Panel</h2>
         <nav>
           <ul>
+            <li>
+              <Link to="/admindashboard">
+                <i className="fas fa-bell nav-icon"></i>
+                Notifications
+              </Link>
+            </li>
             <li>
               <Link to="/admindashboard/view-users">
                 <i className="fas fa-user nav-icon"></i>
@@ -51,17 +63,26 @@ function AdminDashboard() {
                 Schedules
               </Link>
             </li>
+            <li>
+              <Link to="/admindashboard/reports">
+                <i className="fas fa-chart-bar nav-icon"></i>
+                Reports
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
       <div className="main-content">
         <Routes>
+          <Route path="profile" element={<AdminProfile />} />
+          <Route path="notifications" element={<DefaultContent />} />
           <Route path="view-users" element={<UserView />} />
           <Route path="edit-users" element={<EditUsers />} />
           <Route path="add-users" element={<AddUsers />} />
           <Route path="delete-users" element={<DeleteUsers />} />
           <Route path="feedback" element={<FeedbackAdmindash />} />
-          {/* <Route path="schedules" element={<Schedules />} /> */}
+          <Route path="schedules" element={<ScheduleAdminDashboard />} />
+          <Route path="reports" element={<Reports />} />
           <Route path="/" element={<DefaultContent />} />
         </Routes>
       </div>
@@ -87,6 +108,14 @@ const DefaultContent = () => (
       <p><strong>Upcoming Interviews:</strong> 12</p>
       <p><strong>Recent Feedback:</strong> 25 new feedbacks</p>
     </div>
+  </div>
+);
+
+
+const Reports = () => (
+  <div>
+    <h3>Reports Page</h3>
+    <p>This is where the reports would be displayed.</p>
   </div>
 );
 

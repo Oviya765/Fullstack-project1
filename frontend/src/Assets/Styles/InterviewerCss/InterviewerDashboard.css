@@ -1,16 +1,19 @@
 /* Main Container */
 body::-webkit-scrollbar {
     display: none;
-}
-.dashboard-container {
+  }
+  .dashboard-container {
     display: flex;
     height: 100vh;
-    background-image: url("../Images/bglogin.jpeg");
+    background-image: url("D:/sem5-project1/Fullstack-project1/frontend/src/Assets/Images/bglogin.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
   }
   
+  .side-panel>h1{
+    align-items: center;
+  }
   /* Side Panel */
   .side-panel {
     width: 220px;
@@ -18,30 +21,51 @@ body::-webkit-scrollbar {
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.37);
     border: 10px solid rgba(255, 255, 255, 0.5);
+
     color: #333333;
     display: flex;
     flex-direction: column;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     animation: slideIn 0.5s ease-in-out;
-}
-
-.side-panel h2 {
+  }
+  
+  .side-panel .profile-link {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .side-panel .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ecf0f1;
+  }
+  
+  .side-panel h2 {
     margin-top: 0;
     color: #F2A950;
-}
-
-.side-panel nav ul {
+    cursor: pointer;
+  }
+  
+  .side-panel h2 .admin-panel-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .side-panel nav ul {
     list-style-type: none;
     padding: 0;
-}
-
-.side-panel nav ul li {
+  }
+  
+  .side-panel nav ul li {
     margin: 15px 0;
     position: relative;
-}
-
-.side-panel nav ul li a {
+  }
+  
+  .side-panel nav ul li a {
     color: #002F6C;
     text-decoration: none;
     font-weight: bold;
@@ -50,15 +74,15 @@ body::-webkit-scrollbar {
     padding: 10px;
     transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
     border-radius: 5px;
-}
-
-.side-panel nav ul li a:hover {
+  }
+  
+  .side-panel nav ul li a:hover {
     color: #FFFFFF;
     background-color: #002F6C;
     transform: scale(1.05);
-}
-
-.side-panel nav ul li a::before {
+  }
+  
+  .side-panel nav ul li a::before {
     content: "";
     position: absolute;
     left: 0;
@@ -68,11 +92,11 @@ body::-webkit-scrollbar {
     background-color: #F2A950;
     transition: height 0.3s ease;
     transform: translateY(-50%);
-}
-
-.side-panel nav ul li a:hover::before {
+  }
+  
+  .side-panel nav ul li a:hover::before {
     height: 100%;
-}
+  }
   
   /* Main Content Area */
   .main-content {

@@ -4,7 +4,8 @@ import Login from './Component/Login';
 import Register from './Component/Register';
 import Home1 from './Component/Home1';
 import Feedback from './Component/Feedback';
-import AdminDashboard from './Component/AdminPanel';
+import AdminDashboard from './Component/Admin/AdminPanel';
+import InterviewerDashboard from './Component/Interviewer/InterviewerDashboard';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home1 />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/admindashboard/*" element={<AdminDashboard />} />
+        <Route path="/interviewerdashboard/*" element={<InterviewerDashboard />} />
       </Routes>
     </div>
   );

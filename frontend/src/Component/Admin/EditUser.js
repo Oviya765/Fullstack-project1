@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Assets/Styles/EditUser.css';
+import 'D:/sem5-project1/Fullstack-project1/frontend/src/Assets/Styles/AdminCss/EditUser.css';
 
 function EditUser() {
   const [users, setUsers] = useState([

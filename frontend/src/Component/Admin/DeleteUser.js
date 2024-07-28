@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Assets/Styles/DeleteUser.css';
+import 'D:/sem5-project1/Fullstack-project1/frontend/src/Assets/Styles/AdminCss/DeleteUser.css';
 
 function DeleteUser() {
   const [users, setUsers] = useState([

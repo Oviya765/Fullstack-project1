@@ -1,6 +1,6 @@
 // src/Component/UserView.js
 import React, { useState } from 'react';
-import '../Assets/Styles/UserView.css';
+import 'D:/sem5-project1/Fullstack-project1/frontend/src/Assets/Styles/AdminCss/UserView.css';
 
 function UserView() {
   const [searchTerm, setSearchTerm] = useState('');

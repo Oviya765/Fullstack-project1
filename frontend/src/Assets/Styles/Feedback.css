@@ -1,15 +1,15 @@
 /* Feedback container */
 .feedback-container {
-    background-image: url("../Images/bglogin.jpeg");
+    /* background-image: url("../Images/bglogin.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: fixed;
+    position: fixed; */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    /* height: 100vh;
+    width: 100vw; */
     padding: 20px;
   }
   

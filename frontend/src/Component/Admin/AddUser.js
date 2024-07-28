@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../Assets/Styles/AddUser.css';
+import 'D:/sem5-project1/Fullstack-project1/frontend/src/Assets/Styles/AdminCss/AddUser.css';
 
 function AddUser() {
   const [newUser, setNewUser] = useState({

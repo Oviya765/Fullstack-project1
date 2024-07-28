@@ -88,12 +88,12 @@ button {
     animation: pulse 2s infinite; /* Apply pulse animation */
 }
 
-button:hover {
+.home-text>button:hover {
     background-color: #00509E; /* Slightly lighter navy blue on hover */
     transform: scale(1.05); /* Slightly enlarge button */
 }
 
-button:active {
+.home-text>button:active {
     background-color: #003366; /* Dark navy blue on click */
     transform: scale(0.98); /* Slightly shrink button */
 }
