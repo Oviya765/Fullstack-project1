@@ -6,10 +6,12 @@ import Home1 from './Component/Home1';
 import Feedback from './Component/Feedback';
 import AdminDashboard from './Component/Admin/AdminPanel';
 import InterviewerDashboard from './Component/Interviewer/InterviewerDashboard';
+import IntervieweeDashboard from './Component/Interviewee/IntervieweeDashboard';
 
 function App() {
   return (
     <div>
+      
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Login />} />
@@ -17,6 +19,7 @@ function App() {
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/admindashboard/*" element={<AdminDashboard />} />
         <Route path="/interviewerdashboard/*" element={<InterviewerDashboard />} />
+        <Route path="/intervieweedashboard/*" element={<IntervieweeDashboard />} />
       </Routes>
     </div>
   );

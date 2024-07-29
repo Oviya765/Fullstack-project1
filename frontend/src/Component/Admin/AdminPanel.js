@@ -63,10 +63,16 @@ function AdminDashboard() {
                 Schedules
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/admindashboard/reports">
                 <i className="fas fa-chart-bar nav-icon"></i>
                 Reports
+              </Link>
+            </li> */}
+            <li>
+              <Link to="/">
+                <i className="fas fa-sign-out-alt nav-icon"></i>
+                Logout
               </Link>
             </li>
           </ul>

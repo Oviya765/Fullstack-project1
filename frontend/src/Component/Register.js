@@ -47,28 +47,10 @@ function Register() {
       delete tempErrors.dateOfBirth;
     }
 
-    if (name === "registerNumber" && !value) {
-      tempErrors.registerNumber = "Register Number is required";
-    } else if (name === "registerNumber") {
-      delete tempErrors.registerNumber;
-    }
-
-    if (name === "year" && !value) {
-      tempErrors.year = "Year is required";
-    } else if (name === "year") {
-      delete tempErrors.year;
-    }
-
-    if (name === "department" && !value) {
-      tempErrors.department = "Department is required";
-    } else if (name === "department") {
-      delete tempErrors.department;
-    }
-
-    if (name === "section" && !value) {
-      tempErrors.section = "Section is required";
-    } else if (name === "section") {
-      delete tempErrors.section;
+    if (name === "role" && !value) {
+      tempErrors.role = "Role selection is required";
+    } else if (name === "role") {
+      delete tempErrors.role;
     }
 
     dispatch(setErrors(tempErrors));
@@ -134,78 +116,31 @@ function Register() {
             </div>
             <div>
               <input
-                id="registerNumber"
-                type="text"
-                name="registerNumber"
-                placeholder="Enter Register Number"
-                value={formValues.registerNumber}
+                id="dateOfBirth"
+                type="date"
+                name="dateOfBirth"
+                value={formValues.dateOfBirth}
                 onChange={handleChange}
               />
-              {errors.registerNumber && <p className="error">{errors.registerNumber}</p>}
+              {errors.dateOfBirth && <p className="error">{errors.dateOfBirth}</p>}
             </div>
-            <div className="row">
-              <div className="col">
-                <input
-                  id="dateOfBirth"
-                  type="date"
-                  name="dateOfBirth"
-                  value={formValues.dateOfBirth}
-                  onChange={handleChange}
-                />
-                {errors.dateOfBirth && <p className="error">{errors.dateOfBirth}</p>}
-              </div>
-              <div className="col">
-                <select
-                  id="year"
-                  name="year"
-                  value={formValues.year}
-                  onChange={handleChange}
-                >
-                  <option value="">Select Year</option>
-                  <option value="I">I</option>
-                  <option value="II">II</option>
-                  <option value="III">III</option>
-                  <option value="IV">IV</option>
-                </select>
-                {errors.year && <p className="error">{errors.year}</p>}
-              </div>
-            </div>
-            <div className="row">
-              <div className="col">
-                <select
-                  id="department"
-                  name="department"
-                  value={formValues.department}
-                  onChange={handleChange}
-                >
-                  <option value="">Select Department</option>
-                  <option value="CSE">CSE</option>
-                  <option value="ECE">ECE</option>
-                  <option value="EEE">EEE</option>
-                  <option value="IT">IT</option>
-                </select>
-                {errors.department && <p className="error">{errors.department}</p>}
-              </div>
-              <div className="col">
-                <select
-                  id="section"
-                  name="section"
-                  value={formValues.section}
-                  onChange={handleChange}
-                >
-                  <option value="">Select Section</option>
-                  <option value="A">A</option>
-                  <option value="B">B</option>
-                  <option value="C">C</option>
-                  <option value="D">D</option>
-                </select>
-                {errors.section && <p className="error">{errors.section}</p>}
-              </div>
+            <div>
+              <select
+                id="role"
+                name="role"
+                value={formValues.role}
+                onChange={handleChange}
+              >
+                <option value="">Select Role</option>
+                <option value="Interviewer">Interviewer</option>
+                <option value="Interviewee">Interviewee</option>
+              </select>
+              {errors.role && <p className="error">{errors.role}</p>}
             </div>
             
             <button type="submit">Register</button>
             <p>
-              Already have an account? <Link to="/">Login</Link>
+              Already have an account? <Link to="/signin">Login</Link>
             </p>
           </form>
         </div>

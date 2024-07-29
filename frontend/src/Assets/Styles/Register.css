@@ -50,20 +50,9 @@
     align-items: center;
   }
   
-  .row {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .col {
-    flex: 1;
-    margin: 8px;
-  }
-  
-  .col:first-child {
-    margin-right: 4px;
-  }
+ .register-form #dateOfBirth{
+  width:200px;
+ }
   
   .col:last-child {
     margin-left: 4px;
@@ -85,7 +74,9 @@
     border-radius: 5px;
     font-size: 16px;
   }
-  
+  .register-form select{
+    width:210px;
+  }
   /* Error messages */
   .error {
     color: red;

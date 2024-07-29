@@ -11,6 +11,12 @@ function Login() {
   const errors = useSelector((state) => state.form.errors);
   const navigate = useNavigate();
 
+  const staticCredentials = [
+    { email: "admin@example.com", password: "admin123", role: "admin" },
+    { email: "interviewer@example.com", password: "interviewer123", role: "interviewer" },
+    { email: "interviewee@example.com", password: "interviewee123", role: "interviewee" }
+  ];
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     dispatch(updateForm(name, value));
@@ -55,8 +61,29 @@ function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validate()) {
-      console.log("Form data is valid:", formValues);
-      navigate('/home'); // Navigate to home or desired route
+      const { email, password } = formValues;
+      const user = staticCredentials.find(
+        (cred) => cred.email === email && cred.password === password
+      );
+
+      if (user) {
+        console.log("Login successful:", user);
+        switch (user.role) {
+          case "admin":
+            navigate("/admindashboard");
+            break;
+          case "interviewer":
+            navigate("/interviewerdashboard");
+            break;
+          case "interviewee":
+            navigate("/intervieweedashboard");
+            break;
+          default:
+            break;
+        }
+      } else {
+        dispatch(setErrors({ ...errors, form: "Invalid email or password" }));
+      }
     }
   };
 
@@ -91,9 +118,10 @@ function Login() {
               />
               {errors.password && <p className="error">{errors.password}</p>}
             </div>
+            {errors.form && <p className="error">{errors.form}</p>}
             <button type="submit">Login</button>
             <p>
-              Don't have an account? <Link to="register">Register</Link>
+              Don't have an account? <Link to="/register">Register</Link>
             </p>
           </form>
         </div>

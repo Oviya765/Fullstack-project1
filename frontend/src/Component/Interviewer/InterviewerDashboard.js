@@ -71,7 +71,7 @@ function InterviewerDashboard() {
           <Route path="view-interviews" element={<ViewInterviewees />} />
           <Route path="interview" element={<InterviewCreate />} />
           <Route path="schedules" element={<InterviewerSchedules />} />
-          <Route path="reports" element={<Reports />} />
+          {/* <Route path="reports" element={<Reports />} /> */}
           <Route path="feedback" element={<Feedback />} />
           <Route path="/" element={<DefaultContent />} />
         </Routes>
@@ -101,18 +101,5 @@ const DefaultContent = () => (
   </div>
 );
 
-const Reports = () => (
-  <div>
-    <h3>Reports Page</h3>
-    <p>This is where the reports would be displayed.</p>
-  </div>
-);
-
-const Logout = () => (
-  <div>
-    <h3>Logout Page</h3>
-    <p>You have been logged out successfully.</p>
-  </div>
-);
 
 export default InterviewerDashboard;
