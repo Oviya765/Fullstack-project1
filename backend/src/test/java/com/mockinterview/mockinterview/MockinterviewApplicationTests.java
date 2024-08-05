@@ -1,10 +1,10 @@
-package com.mockinterview.backend;
+package com.mockinterview.mockinterview;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackendApplicationTests {
+class MockinterviewApplicationTests {
 
 	@Test
 	void contextLoads() {

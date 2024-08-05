@@ -8,8 +8,9 @@ const IntervieweeProfile = () => {
     email: 'interviewee@example.com',
     password: 'password123',
     phoneNumber: '123-456-7890',
-    qualification: 'Master’s in Computer Science',
-    experience: '3 years',
+    year: '3rd Year',
+    department: 'Computer Science',
+    section: 'A',
   });
 
   const [isEditing, setIsEditing] = useState(false);
@@ -86,21 +87,31 @@ const IntervieweeProfile = () => {
             />
           </div>
           <div className="form-group">
-            <label>Qualification:</label>
+            <label>Year:</label>
             <input 
               type="text" 
-              name="qualification" 
-              value={intervieweeData.qualification} 
+              name="year" 
+              value={intervieweeData.year} 
               onChange={handleChange} 
               disabled={!isEditing} 
             />
           </div>
           <div className="form-group">
-            <label>Experience:</label>
+            <label>Department:</label>
             <input 
               type="text" 
-              name="experience" 
-              value={intervieweeData.experience} 
+              name="department" 
+              value={intervieweeData.department} 
+              onChange={handleChange} 
+              disabled={!isEditing} 
+            />
+          </div>
+          <div className="form-group">
+            <label>Section:</label>
+            <input 
+              type="text" 
+              name="section" 
+              value={intervieweeData.section} 
               onChange={handleChange} 
               disabled={!isEditing} 
             />
